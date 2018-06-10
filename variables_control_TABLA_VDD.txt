@@ -1,0 +1,34 @@
+/*VARIABLES EMPLEADAS EN EL CÓDIGO DE CONTROL DEL MOVIMIENTO DEL COCHE*/
+
+w - recto
+q - avance hacia la izqda
+a - rotacion sobre si mismo sent antihorario
+z - retroceso haci la izquierda 
+x - marcha atras
+c - retroceso hacia la dcha
+d - rotacion sobre si mismo sent horario
+e - avance hacia la dcha
+m - turbo(max.par)
+n - modo normal
+s - paro
+
+//añadir tb encendido de luces
+
+---------------------------------------------------------------------
+/*TABLA DE VERDAD CONTROL MOTOR DC PUENTE H*/
+
+ENABLE | PWM(Pin2_PH) | DIG(Pin7_PH) |   STATUS           |
+--------------------------------------------------------- |
+LOW    |    ----      |    ----      |MOTOR PARADO        |
+HIGH   |    HIGH      |     LOW      |MOTOR GIRA DELANTE  |
+HIGH   |    LOW       |     HIGH     |MOTOR GIRA AL REVES |
+HIGH   |    HIGH      |     HIGH     |MOTOR PARADO        |
+HIGH   |    LOW       |     LOW      |MOTOR PARADO        |
+
+Vemos pues, que para que los motores giren hacia delante, se debe dar una señal lógica a nivel bajo y, además,
+el valor que vamos a darle a la PWM será la velocidad que lleve el motor.
+Cuando gira al revés, se debe dar la señal lógica a nivel algo y en cuándo a la PWM, habrá que restarle al 
+máximo, 255, el valor de la velocidad que queramos, es decir, (255-vel_motor), ya que se activará el giro al
+revés el tiempo que la señal PWM esté low.
+
+----------------------------------------------------------------------

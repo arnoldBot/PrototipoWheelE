@@ -1,0 +1,344 @@
+
+body {
+    background-image: url("images/metal2.jpg");
+
+}
+
+
+/*Mensaje de información*/
+#help_btn{
+	background-image : url(images/help.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+        background-size: 50%;
+	position: absolute;
+    	top: -30px;
+    	left: 1205px;
+	width: 128px;
+	height: 128px;	
+}
+
+
+#popup {
+   visibility: hidden;
+   opacity: 0;
+   margin-top: -300px;
+}
+ 
+#popup:target {
+   visibility:visible;
+   opacity: 1;
+   background-color: rgba(0,0,0,0.8);
+   position: fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   margin:0;
+   z-index: 999;
+   -webkit-transition:all 1s;
+   -moz-transition:all 1s;
+   transition:all 1s;
+}
+.popup-contenedor {
+   position: relative;
+   margin:7% auto;
+   padding:30px 50px;
+   background-color: #fafafa;
+   color:#333;
+   border-radius: 3px;
+   width:50%;
+}
+a.popup-cerrar {
+   position: absolute;
+   top:3px;
+   right:3px;
+   background-color: #333;
+   padding:7px 10px;
+   font-size: 20px;
+   text-decoration: none;
+   line-height: 1;
+   color:#fff;
+}
+/*--------------------------------------------------------*/
+
+@font-face {
+    font-family: gunship;
+
+    src: url(Resources/gunship.ttf);
+}
+
+#Title {
+    color: white;
+    position: absolute;
+    font-family: gunship;
+    top: -10px;
+    left: 40px;
+    font-size: 400%;
+
+}
+
+#logowili{				/*SE EMPLEA LA ALMOHADILLA PARA DECLARAR LAS CLASES */
+ 	position: absolute;		/*CAMBIAR EL TAMAÑO DE PIXELES DEL LOGO */
+	top: 10px;
+    	left: 1060px;
+	width: 175px;
+	height: 172px;
+
+}
+/*--------------------------------------------------------*/
+/* TERMINAL DE LA PAGINA WEB */
+#console {
+    Background: gray;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    width: 430px;
+    height: 560px;
+    border: 3px solid black;
+    border-style: solid;
+    border-color: rgb(173, 173, 133);
+}
+
+#consoleArea {
+    background-color: black;
+    resize: none;
+    color: white;
+    width: 425px;
+    height: 555px;
+    border-style: solid;
+    border-color: rgb(173, 173, 133);
+}
+
+/*----------------------------------------------------------------------------------*/
+/*CONTROLES DEL BRAZO ROBOTICO*/
+#robotArm {
+    Background: black;
+    position: absolute;
+    color: rgb(173, 173, 133);
+    top: 187px;
+    left: 1015px;
+    width: 270px;
+    height: 458px;
+    border: 3px solid black;
+    border-style: solid;
+    border-color: rgb(173, 173, 133);
+}
+
+/*CONFIGURACION DE LA CLASE DE LOS BOTONES PREDEFINIDOS POR CSS PARA EL HOVER */
+	
+.btn-group button {			/*SE EMPLEA EL PUNTO PARA DECLARAR LAS CLASES */
+    background-color: rgb(173, 173, 133); /* Green background */
+    border: 1px solid black; /* Green border */
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+    background-color: #3e8e41;
+}
+
+/*Introduccion de las coordenadas xyz, clase para los 3 huecos*/
+.intrCoor{
+	width: 25%;
+	margin: 3px 0;
+	border: 4px solid black;
+}
+
+/*----------------------------------------------------------------------------------------*/
+/*STREAMING DE LA RASPICAM*/
+#videoStream {
+    Background: black;
+    position: absolute;
+    top: 10px;
+    left: 465px;
+    width: 520px;
+    height: 390px;
+    border: 3px solid black;
+    border-style: solid;
+    border-color: rgb(173, 173, 133);
+}
+
+#videoElement{
+	position: absolute;
+    	top: 2px;
+    	left: -95px;
+    	width: 705px;
+    	height: 380px;
+}
+
+
+/*---------------------------------------------------------------------------------------*/
+/*BOTONERA DEL MOVIMIENTO DEL VEHICULO */
+#controls {
+    Background: black;
+    position: absolute;
+    top: 420px;
+    left: 465px;
+    width: 520px;
+    height: 220px;
+    border: 3px solid black;
+    border-style: solid;
+    border-color: rgb(173, 173, 133);
+}
+
+#leftButton{
+	background-image : url(images/antihorario.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 75px;
+    	left: 102px;
+	width: 100px;
+	height: 70px;
+}
+
+#rightButton{
+	background-image : url(images/horario.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 75px;
+    	left: 302px;
+	width: 100px;
+	height: 70px;	
+}
+
+#upButton{
+	background-image : url(images/palante.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 5px;
+    	left: 202px;
+	width: 100px;
+	height: 70px;
+}
+
+#downButton{
+	background-image : url(images/patras.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 145px;
+    	left: 202px;
+	width: 100px;
+	height: 70px;
+}
+
+#upleftButton{
+	background-image : url(images/palao_izqda.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 5px;
+    	left: 102px;
+	width: 100px;
+	height: 70px;
+}
+
+#downleftButton{
+	background-image : url(images/pabajo_izqda.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 145px;
+    	left: 102px;
+	width: 100px;
+	height: 70px;
+}
+
+#uprightButton{
+	background-image : url(images/palao_dcha.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;	
+	position: absolute;
+    	top: 5px;
+    	left: 302px;
+	width: 100px;
+	height: 70px;
+
+}
+
+#stopButton{
+	background-image : url(images/paro.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 75px;
+    	left: 202px;
+	width: 100px;
+	height: 70px;
+}
+
+#downrightButton{
+	background-image : url(images/pabajo_dcha.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 145px;
+    	left: 302px;
+	width: 100px;
+	height: 70px;
+}
+
+#turboButton {
+    background-image: url(images/traccion.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 5px;
+    left: 407px;
+    width: 100px;
+    height: 100px;
+}
+
+#normalButton{
+	background-image : url(images/normal.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+	position: absolute;
+    	top: 110px;
+    	left: 407px;
+	width: 100px;
+	height: 100px;
+}
+
+#pickButton{
+	background-image : url(images/recoger.png);
+  	background-position: center center;
+  	background-repeat: no-repeat;
+        background-color: black;
+	position: absolute;
+    	top: 30px;
+    	left: 1px;
+	width: 100px;
+	height: 160px;
+}
+
+/*----------------------------------------------------------*/
+
+/*  input[type=text] 
+    {
+    width: 20%;
+    padding: 12px 24px;
+    margin: 3px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    } */
+

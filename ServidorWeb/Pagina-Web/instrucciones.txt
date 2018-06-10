@@ -1,0 +1,65 @@
+1.-	Instalar apache:
+
+	~$sudo apt-get install apache2
+	
+2.-	Activar cgi:
+
+	~$sudo a2enmod cgi
+
+3.-	Configurar directorio html contenido en /var/www/html/ para que pueda ejecutar scripts CGI con el siguente codigo en 		el fichero apache2.config:
+
+	~$sudo nano apache2.config
+	
+	// Dentro de fichero colocamos esto //
+		ScriptAlias  /cgi-bin/ /var/www/html/
+
+		<Directory /var/www/html/>
+    	    Options +ExecCGI
+    	    AddHandler cgi-script .cgi .py
+		</Directory>
+
+
+4.-	Por defecto el nombre de usuario de apache es www-data, por lo que tenemos que darle los permisos a www-data y a tu 	usuario para poder editar todo lo que hay dentro del directorio www: 
+
+		~$sudo adduser pi www-data
+		~$sudo chown -R www-data:www-data /var/www
+		~$sudo chmod -R g+rwX /var/www
+
+5.-	Daremos los permisos a www-data a todos los archivos cgi o .py que quieras que la pagina ejecute:
+
+		~$sudo chmod 755 nombrefichero.py
+
+6.-	Daremos permisos a www-data para abrir y escribir archivos .txt
+
+		~$sudo chmod 755 nombrefichero.txt
+
+7.-	Daremos permisos a www-data para abrir el puerto serie:
+
+		~$sudo usermod -a -G dialout www-data
+
+8.-	Asegurar que el directorio de python es correcta en la primera lina de los scripts:
+	para ello hacemos miramos si estan la libreria pySerial instalada correctamnte con:
+	
+		~$pip list 		// Si es python
+			ó 
+		~$pip3 list		// Si es python3
+				
+	si no esta la instalamos con:
+	
+		~$pip install <nombre del paquete> (la que necesitamos es pySerial) // Si es python
+			ó
+		~$pip3 install <nombre del paquete>		// Si es python3
+
+	segun en donde este instalado (python3 o python) hacemos lo siguiente:
+	
+		~$which python
+			ó 
+		~$which python3
+		
+	nos aparecera el directorio del interprete de python
+	y dentro de los scripts CGI de python ponemos en la primera linea:
+	
+		#!<RUTA DEL INTERPRETE> 
+
+
+

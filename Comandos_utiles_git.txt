@@ -1,0 +1,31 @@
+COMANDOS UTILES GIT
+--------------------------------------------------------------------------------------------------------------------------
+
+Para poder trabajar con commandline, hay que desplazarse con los comandos cd y ls hasta la ubicacion de la carpeta (master), dónde tenemos alojado el repo local.
+
+
+·git pull (bajamos los archivos del repo remoto al local)
+
+·git status (para ver si has realizado cambios en la carpeta del repo y qué cambios se han realizado (deleted,modified y newfile)
+(Antes de comitear hay que añadir o eliminar los archivos manualmente hasta que esten todos tracked)
+
+·git add <archivo> (añades el archivo para posteriormente realizar el commit)
+·git rm <archivo> (eliminas el archivo)
+
+·git commit (Subimos los archivos del pc al repo local)
+·git commit -m 'mensaje' (entre las comillas ira un pequeño comentario de lo que añadimos en el commit)
+
+·git push (subimos los archivos de nuestro repo local al repo remoto)
+
+·git log (Vemos los archivos añadidos al repositorio remoto)
+
+·git log --pretty=format:"%h %s" --graph (Para observar el tracking de los archivos)
+·git log --pretty=format:"%h - %an, %ar : %s" (observamos los cambios desde la creacion del repo)
+·git log --stat (Vemos los cambios realizados con el ultimo commit en cosa de bytes y tamaños)
+·git log -p  (Vemos los cambios realizados en el propio codigo)
+
+
+--------------------------------
+REFERENCIAS
+https://git-scm.com/book/es/v1/Fundamentos-de-Git-Viendo-el-hist%C3%B3rico-de-confirmaciones
+http://rogerdudler.github.io/git-guide/index.es.html

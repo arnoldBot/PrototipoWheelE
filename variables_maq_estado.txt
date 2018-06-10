@@ -1,0 +1,13 @@
+-----------------------VARIABLES MAQUINA DE ESTADOS ARDUINO-------------------------------
+
+CONTROL DEL MOVIMIENTO  | CONTROL DEL BRAZO
+-----------------------------------------------
+mov a	(LEFT)	        |arm 1 (CONTAINER 1)
+mov d	(RIGHT)		|arm 2 (CONTAINER 2)
+mov w	(UP)		|arm h (BRAZO HOME)
+mov x	(DOWN)		|arm t (BRAZO TEST)
+mov p	(STOP)		|arm o (ABRE PINZA)
+mov q	(UPLEFT)	|arm c (CIERRA PINZA)
+mov e	(UPRIGHT)	|arm (x_submit,y_submit,z_submit)
+mov v	(DOWNLEFT)	|
+mov c	(DOWNRIGHT)	|PICK BUTTON

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+    	<head>
+		<meta charset="UTF-8" />
+       
+        	<title>
+       		     Control Panel
+        	</title>
+	<script src="jquery-3.2.1.js"></script>
+	<script src="javascript.js"></script>
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script> -->
+                    <link rel="stylesheet" type="text/css" href="index.css">
+                    <link rel="stylesheet" href="Resources/w3.css">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+                  
+    	    </head>
+    	    <body>
+		<div id="hlp_btn">
+		<a id=help_btn href="#popup" class="popup-link"></a>
+		</div>
+		<div class="modal-wrapper" id="popup">
+		    <div class="popup-contenedor">
+		       <h2>MANUAL DE USO</h2>
+		       <p>Si desea recoger y clasificar un objeto visto en la pantalla, debe dirigirse hacía él manualmente hasta que aparezca sobre dicho objeto un cuadrado de su mismo color. En ese momento, debe pulsar el botón "Recoger objeto" y automaticamente, el robot se posicionará de la manera más óptima y procederá a la recogida y posterior clasificación. </p>
+		       <a class="popup-cerrar" href="#">X</a>
+		    </div>
+		</div>
+		</div>
+
+		<h1 id=Title>WHEEL·E</h1>
+                
+	       	<div id=console>
+			<textarea id=consoleArea readonly></textarea>
+		</div>
+		<div id=videoStream>
+			<video autoplay="true" id="videoElement"></video>
+		</div>
+		<div id=controls>
+			<button id=turboButton class="w3-button w3-xlarge w3-circle w3-black" onclick="sendCommand('TURBO')"></button>
+			<button id=normalButton class="w3-button w3-xlarge w3-circle w3-black" onclick="sendCommand('NORMAL')"></button>
+			<button id=pickButton  onclick="sendCommand('PICK BUTTON')"></button>
+			<button id=leftButton onclick="sendCommand('mov a')"></button>
+			<button id=rightButton onclick="sendCommand('mov d')"></button>
+	   		<button id=upButton onclick="sendCommand('mov w')"></button>
+			<button id=downButton onclick="sendCommand('mov x')"></button>
+			<button id=stopButton onclick="sendCommand('mov p')"></button>
+			<button id=upleftButton onclick="sendCommand('mov q')"></button>
+			<button id=uprightButton onclick="sendCommand('mov e')"></button>
+			<button id=downleftButton onclick="sendCommand('mov z')"></button>
+			<button id=downrightButton onclick="sendCommand('mov c')"></button>
+		</div>
+		
+		<div id=logowili>
+			<img src="images/logo_web.png" >
+		</div>			
+
+		<div id=robotArm>
+			<h3>Brazo Robotico</h3>
+			<h4>Movimientos automáticos</h4>
+			<div class="btn-group" style="width:100%">	
+				<button id=container1 onclick="sendCommand('arm 1')" style="width:50%">Container 1</button>
+				<button id=container2 onclick="sendCommand('arm 2')" style="width:50%">Container 2</button>
+            		</div>
+			<div class="btn-group">	
+				<button id=home onclick="sendCommand('arm h')" style="width:50%">Home</button>
+				<button id=test onclick="sendCommand('arm t')" style="width:50%">Test</button>
+			</div>
+			<h4>Ajustes manuales</h4>
+
+			<h6>Introduzca unas coordenadas</h6>
+			<form ACTION="sendCommand.py" method="get"> 
+				  <label for="fname">X</label>
+				  <input type="text" class="intrCoor" name="coor_x" >
+				  <label for="fname">Y</label>
+				  <input type="text" class="intrCoor" name="coor_y" >
+			          <label for="fname">Z</label>
+				  <input type="text" class="intrCoor" name="coor_z" >
+
+				  <input type="submit" value="Submit" style="width:100%" name="submit">
+			</form>
+			<h6>Pinza</h6>
+				<div class="btn-group" style="width:100%">	
+					<button id=open onclick="sendCommand('arm o')" style="width:50%">Abrir</button>
+					<button id=close onclick="sendCommand('arm c')" style="width:50%">Cerrar</button>
+				</div>
+			</div>
+       
+    	</body>
+</html>
