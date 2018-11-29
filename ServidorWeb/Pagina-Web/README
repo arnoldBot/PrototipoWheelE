@@ -6,6 +6,7 @@ REQUISITOS PREVIOS
 
 2-  Descargar la herramienta Rufus, para grabar imagenes iso en una SD:
     https://rufus.akeo.ie/?locale=es_ES
+    (Posibilidad de emplear el comando "dd" en la terminal de Linux)
 
 3-  Es NECESARIO emplear una tarjeta SD mayor a 8gb. (Formateada)
 ---------------------------------------------------------------------------------------------
